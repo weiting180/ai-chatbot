@@ -1,0 +1,849 @@
+session_config:
+  session_expiration_time: 300
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- bot_challenge
+- inform_name
+- inform_gender
+- inform_birthday
+- inform_country
+- inform_state
+- inform_city
+- inform_street
+- inform_zipcode
+- inform_phone
+- inform_education
+- inform_marital
+- inform_purpose
+- inform_empstatus
+- info_incorrect
+- stop
+- thankyou
+- chitchat
+entities:
+- purpose
+- name
+- gender
+- birthday
+- street
+- city
+- state
+- zipcode
+- phone
+- education
+- marital
+slots:
+  agreement:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  amount:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  anydebt:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  birth:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  city:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  cobirth:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  cocity:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  cocountry:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  coemail:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  coname:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  cophone:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  costate:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  costreet:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  country:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  cozipcode:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  debt:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  dependents:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  drivexp:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  education:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  email:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  empname:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  empstatus:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  expense:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  gender:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  gpa:
+    type: float
+    auto_fill: false
+    influence_conversation: false
+    max_value: 4.0
+    min_value: 0.0
+  household:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  housestat:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  insurance:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  item:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  loan:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  marital:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  name:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  owncar:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  period:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  phone:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  purchase:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  purpose:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  record:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  requested_slot:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  retiredate:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  salary:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  ssn:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  state:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  street:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  zipcode:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: Hi there! I'm your smartest virtual assistant, RASA.
+  utter_confirm:
+  - buttons:
+    - payload: Yes
+      title: Yes
+    - payload: No
+      title: No
+    text: The whole process will take a few minutes to complete. Are you ok with it?
+  utter_ask_name:
+  - text: What's your full name?
+  utter_ask_gender:
+  - buttons:
+    - payload: Male
+      title: Male
+    - payload: Female
+      title: Female
+    - payload: Prefer Not to Answer
+      title: Prefer Not to Answer
+    text: Great! {name}, what's your gender?
+  utter_ask_birth:
+  - text: When is your birthday? (mm/dd/yyyy)
+  utter_ask_country:
+  - text: What country do you currently live?
+  utter_ask_state:
+  - text: Which state are you in?
+  utter_ask_city:
+  - text: Which city do you live in?
+  utter_ask_street:
+  - text: What's the name of the street you live on?
+  utter_ask_zipcode:
+  - text: Please provide your zipcode.
+  utter_ask_phone:
+  - text: Please enter your phone number.
+  utter_ask_email:
+  - text: What's your email?
+  utter_ask_education:
+  - buttons:
+    - payload: Less than high school
+      title: Less than high school
+    - payload: High school diploma or equivalent
+      title: High school diploma or equivalent
+    - payload: Some college, no degree
+      title: Some college, no degree
+    - payload: Postsecondary non-degree award
+      title: Postsecondary non-degree award
+    - payload: Associate's degree
+      title: Associate's degree
+    - payload: Bachelor's degree
+      title: Bachelor's degree
+    - payload: Master's degree
+      title: Master's degree
+    - payload: Doctoral or professional degree
+      title: Doctoral or professional degree
+    text: What's your education level, {name}?
+  utter_ask_marital:
+  - buttons:
+    - payload: Divorced
+      title: Divorced
+    - payload: Married
+      title: Married
+    - payload: Domestic Partners
+      title: Domestic Partners
+    - payload: Separated
+      title: Separated
+    - payload: Single
+      title: Single
+    - payload: Widowed
+      title: Widowed
+    - payload: Prefer Not to Answer
+      title: Prefer Not to Answer
+    text: What's your marital status?
+  utter_ask_empstatus:
+  - buttons:
+    - payload: None
+      title: None
+    - payload: Working Full-Time
+      title: Working Full-Time
+    - payload: Working Part-Time
+      title: Working Part-Time
+    - payload: Unemployed
+      title: Unemployed
+    - payload: Retired
+      title: Retired
+    - payload: Self-Employed
+      title: Self-Employed
+    - payload: Student
+      title: Student
+    - payload: Prefer Not to Answer
+      title: Prefer Not to Answer
+    text: Please indicate the employment status that most describe you.
+  utter_ask_empname:
+  - text: Please tell us the employer name. If you wish not to answer, please leave
+      it a blank.
+  utter_ask_dependents:
+  - buttons:
+    - payload: '0'
+      title: '0'
+    - payload: '1'
+      title: '1'
+    - payload: '2'
+      title: '2'
+    - payload: '3'
+      title: '3'
+    - payload: '4'
+      title: '4'
+    - payload: '5'
+      title: '5'
+    - payload: '6'
+      title: '6'
+    - payload: '7'
+      title: '7'
+    - payload: '8'
+      title: '8'
+    - payload: '9'
+      title: '9'
+    - payload: '10'
+      title: '10'
+    text: How many dependents you have?
+  utter_ask_household:
+  - buttons:
+    - payload: '0'
+      title: '0'
+    - payload: '1'
+      title: '1'
+    - payload: '2'
+      title: '2'
+    - payload: '3'
+      title: '3'
+    - payload: '4'
+      title: '4'
+    - payload: '5'
+      title: '5'
+    - payload: '6'
+      title: '6'
+    - payload: '7'
+      title: '7'
+    - payload: '8'
+      title: '8'
+    - payload: '9'
+      title: '9'
+    - payload: '10'
+      title: '10'
+    text: How many household members you have?
+  utter_ask_housestat:
+  - buttons:
+    - payload: Own
+      title: Own
+    - payload: Rent
+      title: Rent
+    - payload: Other
+      title: Other
+    text: What's your housing status?
+  utter_slots_values:
+  - text: "Your basic information is as follow:\n - Name: {name}\n - Date of Birth:\
+      \ {birth}\n - Gender: {gender}\n - Address: {street}, {city}, {state} {zipcode},\
+      \ {country}\n - Phone Number: {phone}\n - email: {email}"
+  utter_ask_gpa:
+  - text: What's your GPA?
+  utter_slots_stu_values:
+  - text: "- Education Level: {education}\n - GPA: {gpa}"
+  utter_slots_per_values:
+  - text: "- Employment Status: {empstatus}\n - Employment Name: {empname}\n - Salary:\
+      \ {salary}"
+  utter_slots_credit_values:
+  - text: "- Agree the privacy agreement? {agreement}\n - SSN: {ssn}"
+  utter_slots_mortgage_values:
+  - text: "- Item: {item}\n - Amount: {amount}\n - Period: {period}"
+  utter_slots_car_values:
+  - text: "- Whether have insurance? {insurance}\n - Own cars? {owncar}\n - Whether\
+      \ have fine record before? {record}\n - Drive Experience: {drivexp}"
+  utter_slots_house_values:
+  - text: "- House Status: {housestat}\n - Household members: {household}\n - Marital\
+      \ Status: {marital}\n - Number of dependents: {dependents}"
+  utter_slots_retire_values:
+  - text: "- Retirement Date: {retiredate}\n - Salary: {salary}\n - Any debt at this\
+      \ moment? {anydebt}"
+  utter_ask_salary:
+  - buttons:
+    - payload: < 2,000
+      title: < 2,000
+    - payload: 2,000 - 4,000
+      title: 2,000 - 4,000
+    - payload: '> 4,000'
+      title: '> 4,000'
+    text: What's your monthly income?
+  utter_ask_expense:
+  - buttons:
+    - payload: < 2,000
+      title: < 2,000
+    - payload: 2,000 - 4,000
+      title: 2,000 - 4,000
+    - payload: '> 4,000'
+      title: '> 4,000'
+    text: What's your monthly expense?
+  utter_ask_agreement:
+  - buttons:
+    - payload: Yes
+      title: Yes
+    - payload: No
+      title: No
+    text: Do you agree with the SSN usage privacy agreement?
+  utter_ask_ssn:
+  - text: Please enter your SSN.
+  utter_ask_insurance:
+  - buttons:
+    - payload: Yes
+      title: Yes
+    - payload: No
+      title: No
+    text: Do you have the car insurance?
+  utter_ask_record:
+  - buttons:
+    - payload: Yes
+      title: Yes
+    - payload: No
+      title: No
+    text: Have you ever received a traffic ticket?
+  utter_ask_drivexp:
+  - text: How many years have you drove in your life?
+  utter_ask_owncar:
+  - buttons:
+    - payload: Yes
+      title: Yes
+    - payload: No
+      title: No
+    text: Do you currently own a car?
+  utter_ask_retiredate:
+  - text: When is your retirement date? (mm/yyyy)
+  utter_ask_anydebt:
+  - buttons:
+    - payload: Yes
+      title: Yes
+    - payload: No
+      title: No
+    text: Do you have any debt at this moment?
+  utter_ask_purpose:
+  - buttons:
+    - payload: Debt
+      title: Debt
+    - payload: Purchase
+      title: Purchase
+    - payload: Retirement Plan
+      title: Retirement Plan
+    - payload: Bankruptcy
+      title: Bankruptcy
+    text: What brings you here?
+  utter_ask_debt:
+  - buttons:
+    - payload: Loan
+      title: Loan
+    - payload: Credit Card
+      title: Credit Card
+    - payload: Mortgage
+      title: Mortgage
+    - payload: Back
+      title: Back
+    text: What's your debt category?
+  utter_ask_loan:
+  - buttons:
+    - payload: Personal
+      title: Personal
+    - payload: Student
+      title: Student
+    - payload: Back
+      title: Back
+    text: What's your loan category?
+  utter_ask_purchase:
+  - buttons:
+    - payload: Car
+      title: Car
+    - payload: Buy houses
+      title: House
+    - payload: Back
+      title: Back
+    text: What are you planning to purchase?
+  utter_ask_amount:
+  - text: How much are you paying for a mortgage loan in total?
+  utter_ask_period:
+  - buttons:
+    - payload: Daily
+      title: Daily
+    - payload: Weekly
+      title: Weekly
+    - payload: Bi-weekly
+      title: Bi-weekly
+    - payload: Monthly
+      title: Monthly
+    text: What is the payment period for the mortgage loan?
+  utter_coapplicant:
+  - buttons:
+    - payload: Yes
+      title: Yes
+    - payload: No
+      title: No
+    text: Do you have a co-applicant?
+  utter_ask_coname:
+  - text: What's your co-applicant's name?
+  utter_ask_cobirth:
+  - text: When's your co-applicant's birthday? (mm/dd/yyyy)
+  utter_ask_coemail:
+  - text: What's your co-applicant's email?
+  utter_ask_cophone:
+  - text: What's your co-applicant's phone number?
+  utter_ask_costreet:
+  - text: What street does the your co-applicant live?
+  utter_ask_cocity:
+  - text: What city does the your co-applicant live?
+  utter_ask_cocountry:
+  - text: What country does the your co-applicant live?
+  utter_ask_costate:
+  - text: What state does the your co-applicant live?
+  utter_ask_cozipcode:
+  - text: What's the zipcode?
+  utter_slots_covalues:
+  - text: "Your co-applicant information is as follow:\n - Name: {coname}\n - Date\
+      \ of Birth: {cobirth}\n - Email: {coemail}\n - Phone: {cophone}\n - Address:\
+      \ {costreet}, {cocity}, {costate} {cozipcode}, {cocountry}"
+  utter_review_form:
+  - buttons:
+    - payload: Yes
+      title: Yes
+    - payload: No
+      title: No
+    text: Is the information correct?
+  utter_which_slot_is_wrong1:
+  - buttons:
+    - payload: Name is wrong.
+      title: Name
+    - payload: Gender is wrong.
+      title: Gender
+    - payload: Birthday is wrong.
+      title: Birthday
+    - payload: Street is wrong.
+      title: Street
+    - payload: City is wrong.
+      title: City
+    - payload: State is wrong.
+      title: State
+    - payload: Zipcode is wrong.
+      title: Zipcode
+    - payload: Country is wrong.
+      title: Country
+    - payload: Phone is wrong.
+      title: Phone
+    - payload: Email is wrong.
+      title: Email
+    text: Which slot is wrong?
+  utter_which_slot_is_wrong2:
+  - buttons:
+    - payload: Co-applicant's name is wrong.
+      title: Name
+    - payload: Co-applicant's birthday is wrong.
+      title: Birthday
+    - payload: Co-applicant's email is wrong.
+      title: Email
+    - payload: Co-applicant's phone number is wrong.
+      title: Phone
+    - payload: Co-applicant's street name is wrong.
+      title: Street
+    - payload: Co-applicant's city name is wrong.
+      title: City
+    - payload: Co-applicant's country name is wrong.
+      title: Country
+    - payload: Co-applicant's state name is wrong.
+      title: State
+    - payload: Co-applicant's zipcode is wrong.
+      title: Zipcode
+    text: Which slot is wrong?
+  utter_confirm_purpose1:
+  - buttons:
+    - payload: Yes
+      title: Yes
+    - payload: No
+      title: No
+    text: You're here for {purpose} > {debt} > {loan} counseling. Is it right?
+  utter_confirm_purpose2:
+  - buttons:
+    - payload: Yes
+      title: Yes
+    - payload: No
+      title: No
+    text: You're here for {purpose} > {debt} counseling. Is it right?
+  utter_confirm_purpose3:
+  - buttons:
+    - payload: Yes
+      title: Yes
+    - payload: No
+      title: No
+    text: You're here for {purpose} > {purchase} counseling. Is it right?
+  utter_confirm_purpose4:
+  - buttons:
+    - payload: Yes
+      title: Yes
+    - payload: No
+      title: No
+    text: You're here for {purpose} counseling. Is it right?
+  utter_ask_continue:
+  - buttons:
+    - payload: Yes
+      title: Yes
+    - payload: No
+      title: No
+    text: Sorry to hear that. Do you want to continue?
+  utter_chitchat:
+  - text: Maybe we can talk about this later. Let's get back, shall we?
+  utter_submit:
+  - text: Thank you for your time! We have collected all the information we need.
+  utter_goodbye:
+  - text: Goodbye.
+  - text: See you.
+  - text: Bye! Have a good rest of the day.
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+actions:
+- action_reset_slot
+- action_reset_purpose_slots
+- action_check_purpose
+- action_switch_purpose
+- action_export_slots
+- validate_user_profile_form
+- validate_coapplicant_form
+- validate_purpose_form
+forms:
+  user_profile_form:
+    birth:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    city:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    country:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    email:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    gender:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    name:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    phone:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    state:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    street:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    zipcode:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+  coapplicant_form:
+    cobirth:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    cocity:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    cocountry:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    coemail:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    coname:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    cophone:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    costate:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    costreet:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    cozipcode:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+  purpose_form:
+    agreement:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    amount:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    anydebt:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    dependents:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    drivexp:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    education:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    empname:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    empstatus:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    expense:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    gpa:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    household:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    housestat:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    insurance:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    item:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    marital:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    owncar:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    period:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    record:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    retiredate:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    salary:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text
+    ssn:
+    - not_intent:
+      - chitchat
+      - stop
+      type: from_text

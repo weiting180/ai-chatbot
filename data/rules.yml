@@ -1,0 +1,208 @@
+version: "2.0"
+stories:
+- story: Beginning of the user_profile_form
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_confirm
+  - intent: affirm
+  - action: user_profile_form
+  - active_loop: user_profile_form
+  - checkpoint: exception behavior I
+- story: User interrupts the user_profile_form and does NOT want to continue
+  steps:
+  - checkpoint: exception behavior I
+  - intent: stop
+  - action: utter_ask_continue
+  - intent: deny
+  - action: action_deactivate_loop
+  - active_loop: null
+- story: User interrupts the user_profile_form and want to continue
+  steps:
+  - checkpoint: exception behavior I
+  - intent: stop
+  - action: utter_ask_continue
+  - intent: affirm
+  - action: user_profile_form
+  - active_loop: user_profile_form
+  - checkpoint: exception behavior I
+- story: User chitchat during user_profile_form
+  steps:
+  - checkpoint: exception behavior I
+  - intent: chitchat
+  - action: utter_chitchat
+  - action: user_profile_form
+  - active_loop: user_profile_form
+  - checkpoint: exception behavior I
+- story: Beginning of user_profile_form review
+  steps:
+  - checkpoint: exception behavior I
+  - active_loop: null
+  - action: utter_slots_values
+  - action: utter_review_form
+  - checkpoint: are_slots_ok
+- story: Deny the user_profile_form
+  steps:
+  - checkpoint: are_slots_ok
+  - intent: deny
+  - action: utter_which_slot_is_wrong1
+  - intent: info_incorrect
+  - action: action_reset_slot
+  - action: user_profile_form
+  - active_loop: user_profile_form
+  - active_loop: null
+  - action: utter_slots_values
+  - action: utter_review_form
+  - checkpoint: are_slots_ok
+- story: Confirmed the user_profile_form
+  steps:
+  - checkpoint: are_slots_ok
+  - intent: affirm
+  - action: utter_coapplicant
+  - checkpoint: basic_info_done
+- story: Confirmed the user_profile_form without coapplicant
+  steps:
+  - checkpoint: basic_info_done
+  - intent: deny
+  - checkpoint: info_before_purpose_done
+- story: Beginning of coapplicant_form
+  steps:
+  - checkpoint: basic_info_done
+  - intent: affirm
+  - action: coapplicant_form
+  - active_loop: coapplicant_form
+  - checkpoint: exception behavior II
+- story: User interrupts the coapplicant_form and does NOT want to continue
+  steps:
+  - checkpoint: exception behavior II
+  - intent: stop
+  - action: utter_ask_continue
+  - intent: deny
+  - action: action_deactivate_loop
+  - active_loop: null
+- story: User interrupts the coapplicant_form and want to continue
+  steps:
+  - checkpoint: exception behavior II
+  - intent: stop
+  - action: utter_ask_continue
+  - intent: affirm
+  - action: coapplicant_form
+  - active_loop: coapplicant_form
+  - checkpoint: exception behavior II
+- story: User chitchat during coapplicant_form
+  steps:
+  - checkpoint: exception behavior II
+  - intent: chitchat
+  - action: utter_chitchat
+  - action: coapplicant_form
+  - active_loop: coapplicant_form
+  - checkpoint: exception behavior II
+- story: Beginning of coapplicant_form review
+  steps:
+  - checkpoint: exception behavior II
+  - active_loop: null
+  - action: utter_slots_covalues
+  - action: utter_review_form
+  - checkpoint: are_coslots_ok
+- story: Deny the coapplicant_form
+  steps:
+  - checkpoint: are_coslots_ok
+  - intent: deny
+  - action: utter_which_slot_is_wrong2
+  - intent: info_incorrect
+  - action: action_reset_slot
+  - action: coapplicant_form
+  - active_loop: coapplicant_form
+  - active_loop: null
+  - action: utter_slots_covalues
+  - action: utter_review_form
+  - checkpoint: are_coslots_ok
+- story: Confirmed the coapplicant_form
+  steps:
+  - checkpoint: are_coslots_ok
+  - intent: affirm
+  - checkpoint: info_before_purpose_done
+- story: (Path I) Ask the visit purpose and switch them to respective categories
+  steps:
+  - checkpoint: info_before_purpose_done
+  - action: action_switch_purpose
+  - intent: inform_purpose
+  - action: action_check_purpose
+  - action: action_switch_purpose
+  - checkpoint: start_filling_form
+- story: (Path II) Ask the visit purpose and switch them to respective categories
+  steps:
+  - checkpoint: info_before_purpose_done
+  - action: action_switch_purpose
+  - intent: inform_purpose
+  - action: action_check_purpose
+  - action: action_switch_purpose
+  - intent: inform_purpose
+  - action: action_check_purpose
+  - action: action_switch_purpose
+  - checkpoint: start_filling_form
+- story: (Path III) Ask the visit purpose and switch them to respective categories
+  steps:
+  - checkpoint: info_before_purpose_done
+  - action: action_switch_purpose
+  - intent: inform_purpose
+  - action: action_check_purpose
+  - action: action_switch_purpose
+  - intent: inform_purpose
+  - action: action_check_purpose
+  - action: action_switch_purpose
+  - intent: inform_purpose
+  - action: action_check_purpose
+  - action: action_switch_purpose
+  - checkpoint: start_filling_form
+- story: Confirmed and activate the corresponding form
+  steps:
+  - checkpoint: start_filling_form
+  - intent: affirm
+  - action: purpose_form
+  - active_loop: purpose_form
+  - checkpoint: exception behavior III
+- story: Deny and re-enter the purpose_form
+  steps:
+  - checkpoint: start_filling_form
+  - intent: deny
+  - action: action_reset_purpose_slots
+  - checkpoint: info_before_purpose_done
+- story: User interrupts the purpose_form and does NOT want to continue
+  steps:
+  - checkpoint: exception behavior III
+  - intent: stop
+  - action: utter_ask_continue
+  - intent: deny
+  - action: action_deactivate_loop
+  - active_loop: null
+- story: User interrupts the purpose_form and want to continue
+  steps:
+  - checkpoint: exception behavior III
+  - intent: stop
+  - action: utter_ask_continue
+  - intent: affirm
+  - action: purpose_form
+  - active_loop: purpose_form
+  - checkpoint: exception behavior III
+- story: User chitchat during the purpose_form
+  steps:
+  - checkpoint: exception behavior III
+  - intent: chitchat
+  - action: utter_chitchat
+  - action: purpose_form
+  - active_loop: purpose_form
+  - checkpoint: exception behavior III
+rules:
+- rule: Submit form
+  condition:
+  - active_loop: purpose_form
+  - slot_was_set:
+    - requested_slot: null
+  steps:
+  - action: purpose_form
+  - active_loop: null
+  - action: action_export_slots
+
+
+

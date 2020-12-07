@@ -1,0 +1,383 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - Hey
+    - HEY
+    - hello
+    - HELLO
+    - hi
+    - Hi
+    - HI
+    - good morning
+    - Morning
+    - good evening
+    - yo
+    - YO
+    - What's up
+    - wassup
+    - hey there
+    - here
+- intent: inform_name
+  examples: |
+    - [Weiting Ho](name)
+    - [Ben](name)
+    - [Ben Ho](name)
+    - [can huang](name)
+    - [Nina Huang](name)
+    - My name is [Steven Nguyen](name)
+    - I'm [Jinsi Tao](name)
+    - [Ricky](name)
+    - [Angus](name)
+    - My name is [Michael](name)
+    - [David](name)
+    - [James](name)
+    - My name is [John](name)
+    - [Robert](name)
+    - [William](name)
+    - [Christopher](name)
+    - I'm [Joseph](name)
+    - [Jennifer](name)
+    - [Daniel](name)
+    - I'm [Richard](name)
+    - [Thomas](name)
+    - My name is [Mary](name)
+    - [Matthew](name)
+    - [Mark](name)
+    - [Steven](name)
+    - [Brian](name)
+    - [Kevin](name)
+    - [Charles](name)
+    - [Anthony](name)
+    - My name is [Lisa](name)
+    - [Jessica](name)
+    - [Timothy](name)
+    - [Jeffrey](name)
+    - I'm [Jason](name)
+    - [Joshua](name)
+    - [Andrew](name)
+    - I'm [Linda](name)
+    - [Elizabeth](name)
+    - [Susan](name)
+    - [Patricia](name)
+    - My name is [Paul](name)
+    - [Karen](name)
+    - [Kimberly](name)
+    - [Eric](name)
+    - [Kenneth](name)
+    - I'm [Devanshi Savla](name)
+    - [Naveen Boopalan](name)
+    - [Harish Venkatesh](name)
+    - I'm [Xingyan Wen](name)
+    - [Xiaoyuan Wang](name)
+    - [Siddhesh Walunj](name)
+    - My name is [Daniel Yang](name)
+    - [Ming Sheng](name)
+    - [Medhini Prakash](name)
+    - [Vaibhavi Pandit](name)
+    - I'm [Kawaljeet Chadha](name)
+    - [Amal Saadat](name)
+    - [Asmita Shrestha](name)
+    - My name is [Rahul Bhatt](name)
+    - [Saimanoj Putlur](name)
+    - [Siyu Chen](name)
+    - [Michelle](name)
+    - [Scott](name)
+    - I'm [Sarah](name)
+    - [Amanda](name)
+    - [Melissa](name)
+    - [Ashley](name)
+    - My name is [Ryan](name)
+    - [Deborah](name)
+    - [Stephanie](name)
+    - [Nicholas](name)
+    - [Gregory](name)
+    - I'm [Jonathan](name)
+    - [Gary](name)
+    - [Steven Huang](name)
+- intent: inform_gender
+  examples: |
+    - [Male](gender)
+    - [Female](gender)
+    - [Man](gender)
+    - [Woman](gender)
+    - [Boy](gender)
+    - [Girl](gender)
+    - [male](gender)
+    - [female](gender)
+    - [M](gender)
+    - [F](gender)
+- intent: inform_birthday
+  examples: |
+    - [06/26/1991](birthday)
+    - [12/15/1994](birthday)
+    - [09/28/1991](birthday)
+    - [12/31/1990](birthday)
+    - [06/06/1995](birthday)
+    - [10/09/1976](birthday)
+    - [02/18/1985](birthday)
+    - [11/25/1969](birthday)
+    - [01/13/2000](birthday)
+    - [03/14/2008](birthday)
+    - [04/17/1961](birthday)
+    - [05/29/1989](birthday)
+    - [07/23/1978](birthday)
+    - [08/30/1992](birthday)
+    - [1/1/1996](birthday)
+    - [12/31/1995](birthday)
+    - 11/11/1991
+    - [11/25/1993](birthday)
+- intent: inform_country
+  examples: |
+    - United States
+    - USA
+    - US
+    - America
+- intent: inform_state
+  examples: |
+    - I live in [AL](state)
+    - I'm from [TX](state)
+    - My residence state is [AZ](state)
+    - I come from [CO](state)
+    - [California](state)
+    - [CA](state)
+    - [Florida](state)
+    - [FL](state)
+    - [Illinois](state)
+    - [IL](state)
+- intent: inform_city
+  examples: |
+    - I live in [Richardson](city)
+    - City name is [Plano](city)
+    - I live in [Denton](city) city
+    - [Austin](city)
+    - [Dallas](city)
+    - [Frisco](city)
+    - [Tampa](city)
+- intent: inform_street
+  examples: |
+    - [1234 Wall Street](street)
+    - [920 Prestwick Ln](street)
+    - [1111 Wall St](street)
+    - [1562 heaven Ln](street)
+    - [3560 Alma Rd](street)
+    - [1224 N Central Expy](street)
+    - [955 W Presiident George Bush Hwy](street)
+    - [1180 North Coit Rd](street)
+    - 111 Campbell Rd
+    - 123 xxxx St
+    - 123 asdf st
+    - 1111 Coint Rd
+- intent: inform_zipcode
+  examples: |
+    - zipcode is [30301](zipcode)
+    - My zipcode is [12345](zipcode)
+    - [75080](zipcode)
+    - [75081](zipcode)
+    - [75085](zipcode)
+    - [75000](zipcode)
+    - [85001](zipcode)
+    - [99524](zipcode)
+    - [72201](zipcode)
+    - [80201](zipcode)
+    - [20001](zipcode)
+    - [20010](zipcode)
+    - [30301](zipcode)
+    - [12345](zipcode)
+    - [12334](zipcode)
+    - 75088
+- intent: inform_phone
+  examples: |
+    - [0123456789](phone)
+    - [9726799605](phone)
+    - [4562348594](phone)
+    - [1492054933](phone)
+    - [4628696689](phone)
+    - [4567645678](phone)
+    - [8754676321](phone)
+    - [4678905678](phone)
+    - [2836712575](phone)
+    - [1235658943](phone)
+    - [2457945680](phone)
+    - [1873453232](phone)
+    - [0123345664](phone)
+    - 123456789
+- intent: inform_education
+  examples: |
+    - [Less than high school](education)
+    - [High school diploma or equivalent](education)
+    - [Some college, no degree](education)
+    - [Postsecondary non-degree award](education)
+    - [Associate's degree](education)
+    - [Bachelor's degree](education)
+    - [Master's degree](education)
+    - [Doctoral or professional degree](education)
+- intent: inform_marital
+  examples: |
+    - [Single](marital)
+    - [Divorced](marital)
+    - [Married](marital)
+    - [Domestic Partners](marital)
+    - [Separated](marital)
+    - [Widowed](marital)
+- intent: inform_purpose
+  examples: |
+    - [Debt](purpose)
+    - [Loan](purpose)
+    - [Purchase](purpose)
+    - [Student](purpose)
+    - [Personal](purpose)
+    - [Credit Card](purpose)
+    - [Mortgage](purpose)
+    - [Car](purpose)
+    - [House](purpose)
+    - [Buy house](purpose)
+    - [Home Buying](purpose)
+    - [Retirement Plan](purpose)
+    - [retirement plan](purpose)
+    - [Back](purpose)
+    - [back](purpose)
+- intent: inform_empstatus
+  examples: |
+    - Working Full-Time
+    - Working Part-Time
+    - Unemployed
+    - Retired
+    - Self-Employed
+- intent: info_incorrect
+  examples: |
+    - Name is wrong.
+    - Gender is wrong.
+    - Birthday is wrong.
+    - Street is wrong.
+    - City is wrong.
+    - State is wrong.
+    - Zipcode is wrong.
+    - Country is wrong.
+    - Phone is wrong.
+    - Email is wrong.
+    - Education is wrong.
+    - Marital status is wrong.
+    - Employment Status is wrong.
+    - Number of dependents is wrong.
+    - Number of household member is wrong.
+    - House status is wrong.
+    - GPA is wrong.
+    - Salary is wrong.
+    - SSN is wrong.
+    - Co-applicant's name is wrong.
+    - Co-applicant's birthday is wrong.
+    - Co-applicant's email is wrong.
+    - Co-applicant's phone number is wrong.
+    - Co-applicant's street name is wrong.
+    - Co-applicant's city name is wrong.
+    - Co-applicant's country name is wrong.
+    - Co-applicant's state name is wrong.
+    - Co-applicant's zipcode is wrong.
+    - Period is wrong.
+    - Insurance slot needs change.
+    - Record slot needs change.
+    - Drive experience slot needs change.
+    - Own cars slot needs change.
+    - Salary needs change.
+    - Any debt records needs change.
+- intent: stop
+  examples: |
+    - that's not what I want to do
+    - wait stop
+    - you're no help
+    - this is no help at all
+    - this isn't working
+    - don't like that
+    - I don't want to tell you that
+    - none of your business
+    - that's not right
+    - stop asking
+    - nevermind
+    - I want to do something else
+    - I changed my mind
+    - misunderstand
+    - stop
+    - Stop
+- intent: chitchat
+  examples: |
+    - what's the weather?
+    - can you tell a joke?
+    - what did you have for breakfast?
+    - what did you have for lunch?
+    - what did you have for dinner?
+    - how old are you?
+    - do you know how to make pizza?
+    - when did you sleep last night?
+    - are you single?
+    - are you married?
+    - what's your name?
+    - when is your birthday?
+    - I want to order a pizza
+    - order pizza
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you around
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - sure
+    - ok
+    - why not
+    - ok great
+    - yes I did
+    - yeah, great
+    - pretty good
+    - fine
+    - You bet
+    - I sure did
+    - more or less
+- intent: deny
+  examples: |
+    - no
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - none
+    - absolutely not
+    - no thanks
+    - didn't do any
+    - no I didn't
+    - could have been better
+    - not great
+    - nope
+    - N/A
+    - Prefer Not to Answer
+    - No
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: thankyou
+  examples: |
+    - okay great thanks
+    - thank you
+    - sure thanks
+    - thanks bye
+    - thanks
+- regex: birthday
+  examples: |
+    - ^((\d{2})/(\d{2})/(\d{4}))$
+- regex: phone
+  examples: |
+    - ^(\d{10})$
+- regex: zipcode
+  examples: |
+    - ^(\d{5})$
